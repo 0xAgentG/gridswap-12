@@ -4,7 +4,7 @@ class Graph {
     if (randomSpaces) {
         this.emptySpaces = randomSpaces;
     } else {
-        this.emptySpaces = [14, 22, 55, 58, 111, 123, 77];
+        this.emptySpaces = [14, 22, 55, 58];
     }
     this.setEmptySpaces()
   }
@@ -17,12 +17,6 @@ class Graph {
       blankTile.classList.add("blocked-tile");
       blankTile = document.getElementById(this.emptySpaces[3]);
       blankTile.classList.add("blocked-tile");
-      blankTile = document.getElementById(this.emptySpaces[4]);
-      blankTile.classList.add("blocked-tile");
-      blankTile = document.getElementById(this.emptySpaces[5]);
-      blankTile.classList.add("blocked-tile");
-      blankTile = document.getElementById(this.emptySpaces[6]);
-      blankTile.classList.add("blocked-tile");	  
   }
 
 //   SOLVING ATTEMPT BELLOW
@@ -190,11 +184,11 @@ let points = 0;
 let pointsHtml = document.getElementById('points');
 pointsHtml.innerHTML = points;
 
-let random = [Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144),  Math.floor(Math.random() * 144),  Math.floor(Math.random() * 144),  Math.floor(Math.random() * 144)];
+let random = [Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144)];
 let g = new Graph(random);
 
 function randomizeBoard() {
-    random = [Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144),  Math.floor(Math.random() * 144),  Math.floor(Math.random() * 144) , Math.floor(Math.random() * 144)];
+    random = [Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144), Math.floor(Math.random() * 144)];
     g = new Graph(random);
 }
 
@@ -251,12 +245,9 @@ function createBoardFromInput() {
     const input2 = document.getElementById("point2");
     const input3 = document.getElementById("point3");
     const input4 = document.getElementById("point4");
-    const input5 = document.getElementById("point5");
-    const input6 = document.getElementById("point6");
-    const input7 = document.getElementById("point7");
-	
+
     clearBoard(false);
-    random = [input1.value, input2.value, input3.value, input4.value, input5.value, input6.value, input7.value];
+    random = [input1.value, input2.value, input3.value, input4.value];
     g = new Graph(random);
 }
 
